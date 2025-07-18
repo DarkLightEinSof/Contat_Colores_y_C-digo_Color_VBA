@@ -1,0 +1,32 @@
+VBA Excel Macro contar colores:
+
+Contar celdas de color específico:
+Function ContarVerdes(rango As Range) As Long
+    Dim celda As Range
+    Dim contador As Long
+    Dim colorVerde As Long
+ 
+    contador = 0
+    colorVerde = 5287936 ' Verde estándar (#00B050)
+ 
+    For Each celda In rango
+        If celda.Interior.color = colorVerde Then
+            contador = contador + 1
+        End If
+    Next celda
+ 
+    ContarVerdes = contador ' ? nombre correcto de la función
+End Function
+ 
+ 
+ 
+Para ver el código de color:
+
+Function ColorCeldas(celdas As Range) As Long
+    ColorCeldas = celdas.Cells(1, 1).Interior.Color
+End Function
+
+
+ 
+ 
+
